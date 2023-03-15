@@ -38,7 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sitemaps',
     "post",
+    "account",
+    'bootstrap_modal_forms',
+    'widget_tweaks',
+    
 ]
 
 MIDDLEWARE = [
@@ -112,7 +117,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'Asia/kathmandu'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
@@ -131,7 +136,8 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
+LOGIN_REDIRECT_URL='home'
+LOGOUT_REDIRECT_URL='login'
 
 MEDIA_URL='/media/'
 MEDIA_ROOT=BASE_DIR / 'media'
