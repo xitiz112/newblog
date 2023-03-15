@@ -41,8 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
     "post",
     "account",
-    'bootstrap_modal_forms',
-    'widget_tweaks',
+   
     
 ]
 
