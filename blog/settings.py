@@ -129,6 +129,11 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = [
+    BASE_DIR / 'static'
+]
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -140,4 +145,11 @@ LOGOUT_REDIRECT_URL='login'
 
 MEDIA_URL='/media/'
 MEDIA_ROOT=BASE_DIR / 'media'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.mailgun.org'
+EMAIL_HOST_USER = 'postmaster@sandbox9bd2c8f2e4424dd8906eec83b4030134.mailgun.org'
+EMAIL_HOST_PASSWORD = '932629a510308490110fd1ba8b05d0b0-181449aa-8b13a30d'
+EMAIL_PORT = '587'
+EMAIL_USE_TLS = True
 

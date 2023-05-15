@@ -1,12 +1,29 @@
 from django.views import generic
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render,HttpResponse
 from .models import Post,Category
 from django.views.generic.detail import DetailView
 from .forms import commentform
+from django.core.mail import send_mail
+from django.contrib import messages
 
 def homepage(request):
     queryset = Post.objects.filter(status=1).order_by('-created')
     cat_title= Category.objects.all()
+
+    if request.method=='POST':
+         Name=request.POST['name']
+         Email=request.POST['email']
+         Message=request.POST['message']
+
+         send_mail(
+            Name,Message,Email,['kshitizbasnet86@gmail.com']
+
+        )
+         messages.success(request,'message sent succesfully',fail_silently=True)
+         return render(request,'post/index.html',{'queryset':queryset,'cat_title':cat_title})
+
+
+    
     return render(request,'post/index.html',{'queryset':queryset,'cat_title':cat_title})
 
 
@@ -39,3 +56,6 @@ def PostDetail(request,pk):
     return render(request, 'post/detail.html', {'post': post,
                                            'comments': comments,
                                            'new_comment': new_comment,'comment_form':comment_form})
+
+
+

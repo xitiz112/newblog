@@ -1,60 +1,101 @@
 {% extends "./base.html" %}
+{% load static %}
 
+{% block title %}Home{% endblock %}
 
 {% block content %}
-<style>
-    body {
-        font-family: "Roboto", sans-serif;
-        font-size: 18px;
-        background-color: #fdfdfd;
-    }
+<div class="banner">
+    <img src="{% static 'img/little-dragon-8FON0kYSZV0-unsplash.jpg'   %}"  >
+<div class="banner-text">
+<h1>we are HBK and associates</h1>
+<a href="#contactform"><p>contact us </p></a>
+</div>
+</div>
 
-    .head_text {
-        color: white;
-    }
+<div class="container" id="about">
+    <div class="about-section" >
+<div class="about-one">
+<h2>who we are</h2>
+<P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+    molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+    numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
+    optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis
+    obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam
+    nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,
+    tenetur error, harum nesciunt ipsum debitis quas aliquid. Reprehenderit,
+    quia.</P>
+</div>
+<div class="about-two">
+    <img src="{% static 'img/little-dragon-8FON0kYSZV0-unsplash.jpg'   %}"  >
+</div>
 
-    .card {
-        box-shadow: 0 16px 48px #E3E7EB;
-    }
-
-
-    .site-heading h3
-    {
-        text-align: center;
-    }
-</style>
-
-<header class="masthead">
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row">
-            <div class=" col-md-8 col-md-10 mx-auto">
-                <div class="site-heading">
-                    <h3 class="site-heading my-4 mt-3 text-white"> This is a banner section. </h3>
-                    
-                </div>
-            </div>
+    </div>
+<div class="container" id="our-services">
+    <h2 class="header">what we do</h2>
+    <div class="services-section" >
+       
+        <div class="service-one">
+             <h3>auditing services</h3>
+            <img src="{% static 'img/Depositphotos_8078801_S.jpg'   %}"  >
+            <div class="overlay"></div>
+        </div>
+        <div class="service-two">
+            <h3>taxation</h3>
+            <img src="{% static 'img/taxation.jpg' %}"   >
+        </div>
+        <div class="service-three">
+            <h3>advisory services</h3>
+            <img src="{% static 'img/Advisory-board1.jpg'   %}"  >
         </div>
     </div>
-</header>
-<div class="container">
-    <div class="row">
-        <!-- Blog Entries Column -->
-        <div class="col-md-8 mt-3 left">
-            {% for post in queryset %}
-            <div class="card mb-4">
-                <div class="card-body">
-                    <h2 class="card-title">{{ post.title }}</h2>
-                    <p class="card-text text-muted h6">{{ post.author }} | {{ post.created}} </p>
-                   
-                    <p class="card-text">{{post.content|slice:":200" }}</p>
-                    <a href="{% url 'post_category' post.category %}" class="btn btn-primary"> <p class="card-text">{{post.category}}</p></a>
-                    <a href="{% url 'post_detail' post.id  %}" class="btn btn-primary">Read More &rarr;</a>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-        {% block sidebar %} {% include './sidebar.html' %} {% endblock sidebar %}
+
+  
+</div>
+
+
+
     </div>
 </div>
+ 
+    
+
+
+
+
+<div class="container" id="contact" >
+    <h2 class="contact-header">contact us</h2>
+<div class="contact-section">
+    <div id="contactform">
+    <form method="POST" action="">
+  {% csrf_token   %}
+      <label for="name"> Name</label>
+      <input type="text" id="name" name="name" placeholder="Your name..">
+  
+      <label for="email">email</label>
+      <input type="text" id="email" name="email" placeholder="Your email">
+  
+      
+  
+      <label for="message">message</label>
+      <textarea id="message" name="message" placeholder="Write something.." ></textarea>
+  
+      <input type="submit" value="Submit">
+      {% for message in messages %}
+      <div class="alert alert-{{ message.tags }} mb-0 alert-dismissible fade show" role="alert">
+        <strong>Message: </strong> {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      {% endfor %}
+    </form>
+    </div>
+    <div class="contact-details">
+        <p>Phone:</p>
+        <p>Email:</p>
+        <p>Address:</p>
+    </div>
+  </div>
+</div>
+
 {%endblock%}
