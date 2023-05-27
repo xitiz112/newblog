@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
     "post",
     "account",
+    "mypage"
    
     
 ]

@@ -157,9 +157,9 @@ flex-basis: 50%;
 {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 25%;
+    right: 25%;
     text-align: center;
-    transform: translate(-50%, -50%);
     text-transform: capitalize;
     color: #fff;
 }
@@ -190,6 +190,8 @@ flex-basis: 50%;
 }
 .dropdown a{
     color: #fff;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 .dropdown-items
 {
@@ -199,7 +201,8 @@ flex-basis: 50%;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    transition: 0.3s;
+    transition: 0.9s;
+    margin-top: 20px;
 }
 .dropdown-items a
 {
@@ -212,6 +215,36 @@ cursor: pointer;
 .dropdown:hover > .dropdown-items
 {
     display: block;
+   
+}
+/* /* .banner::before
+{
+    width: 65%;
+    left: 0;
+    transform: matrix(1, 0.102, 0, 2, 0, 0);
+    position: absolute;
+    content: '';
+    height: 50px;
+    background: #fff !important;
+    z-index: 2;
+    bottom: -100px;
+} 
+.banner::after
+{
+    width: 35%;
+    right: 0;
+    transform: matrix(1, -0.102, 0, 2, 0, 0);
+    position: absolute;
+    content: '';
+    height: 50px;
+    background: #fff !important;
+    z-index: 2;
+    bottom: -121px;
+} */
+.our-services
+{
+    background-color: #f3f3f3;
+    padding: 40px 0;
 }
 .dropdown i
 {
@@ -223,7 +256,7 @@ cursor: pointer;
     display: flex;
     flex-direction: row;
     column-gap: 50px;
-    margin: 80px 0px 50px 0px; 
+    margin: 102px 0px 50px 0px; 
     flex-wrap: wrap;
     
 }
@@ -237,8 +270,12 @@ cursor: pointer;
     height: 2px;
     background-color: #04AA6D;
     position: absolute;
-    left: 127px;
+    left: 0;
     margin-top: 44px;
+}
+.text-slider-items
+{
+    display: none;
 }
 .about-one h2{
 
@@ -247,7 +284,7 @@ text-transform: uppercase;
 .about-one p{
     margin-top: 60px;
     text-align: justify;
-    color: #6c757d;
+    color:#000;
     line-height: 1.8;
 }
 
@@ -438,6 +475,13 @@ footer{
         right: 0;
         color: #fff;
         cursor: pointer;
+        position: absolute;
+        left: 20px;
+    }
+
+    .banner img{
+        height: 80vh;
+        object-fit: cover;
     }
     .navbar ul{
         display: none;
@@ -447,7 +491,7 @@ footer{
         height: 100%;
         width: 0;
         position: fixed;
-        z-index: 1;
+        z-index: 9999;
         top: 0;
         left: 0;
         background-color: rgb(0,0,0);
@@ -480,6 +524,14 @@ footer{
         right: 45px;
         font-size: 60px;
       }
-      
+      .contact-section
+      {
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      #contactform
+      {
+        flex-basis: 100%;
+      }
   
 }

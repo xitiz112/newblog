@@ -5,10 +5,13 @@ from django.views.generic.detail import DetailView
 from .forms import commentform
 from django.core.mail import send_mail
 from django.contrib import messages
+from mypage.models import Page
 
 def homepage(request):
     queryset = Post.objects.filter(status=1).order_by('-created')
     cat_title= Category.objects.all()
+    newpages=Page.objects.all()
+
 
     if request.method=='POST':
          Name=request.POST['name']
@@ -24,7 +27,7 @@ def homepage(request):
 
 
     
-    return render(request,'post/index.html',{'queryset':queryset,'cat_title':cat_title})
+    return render(request,'post/index.html',{'queryset':queryset,'cat_title':cat_title,'newpages':newpages})
 
 
 
