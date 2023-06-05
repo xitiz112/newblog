@@ -12,12 +12,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://kit.fontawesome.com/95933f86b7.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     </head>
 
@@ -28,7 +28,7 @@
 <div class="navbar">
   <ul>
     <li><a href="{% url 'home' %}" class="active">Home </a> </li>
-{% for page in newpages %}
+{% for page in page_one %}
     <li><a href="{% url 'mypage' page.slug    %}">{{page}}</a></li>
 
 {% endfor %}
@@ -39,11 +39,12 @@
                        
                         </li>
      {% endfor %} -->
+     <li><a href="#our-clients">Testimonials</a></li>
     <li><a href="#our-services">services</a></li>
     <li><a href="#contact">contact</a></li>
   
   
-   <li class="dropdown">
+   <!-- <li class="dropdown">
 <a>dropdown</a><i class="fa fa-caret-down" aria-hidden="true"></i>
 <ul class="dropdown-items">
   <li><a>item1</a></li>
@@ -53,7 +54,7 @@
 
 
 
-   </li>
+   </li> -->
 
 
 
@@ -134,12 +135,12 @@
 
 </div>
 
-        <footer class="py-3 bg-grey">
+<footer class="py-3 bg-grey">
 
-          <div class="copyright">
-            <p class="m-0  text-center ">Copyright 2023 &copy; Axis infotech </p>
-            </div>
-        </footer>
+    <div class="copyright">
+          <p class="m-0  text-center ">Copyright 2023 &copy; Axis infotech </p>
+    </div>
+</footer>
        
 
 </div>
@@ -160,7 +161,7 @@
     -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
- 
+   
 
 
 <script>
@@ -170,11 +171,11 @@
                  $(".text-slider-items").text();
   
              var typed = new Typed(".text-slider", {
-                 strings: typed_strings.split(", "),
-                 typeSpeed: 100,
+                 strings: typed_strings.split(","),
+                 typeSpeed: 50,
                  loop: true,
                  backDelay: 900,
-                 backSpeed: 100,
+                 backSpeed: 50,
              });
          }
 
@@ -184,7 +185,7 @@
   $(document).ready(function(){
     $('.owl-carousel').owlCarousel({
     loop:true,
-    margin:10,
+    margin:20,
     nav:true,
     autoplay:true,
     responsive:{
@@ -195,7 +196,7 @@
             items:3
         },
         1000:{
-            items:5
+            items:3
         }
     }
 })

@@ -11,6 +11,8 @@ def homepage(request):
     queryset = Post.objects.filter(status=1).order_by('-created')
     cat_title= Category.objects.all()
     newpages=Page.objects.all()
+    page_one=Page.objects.filter(title__contains='about')
+    page_two=Page.objects.filter(title__contains='cloud')
 
 
     if request.method=='POST':
@@ -27,7 +29,8 @@ def homepage(request):
 
 
     
-    return render(request,'post/index.html',{'queryset':queryset,'cat_title':cat_title,'newpages':newpages})
+    return render(request,'post/index.html',
+    {'queryset':queryset,'cat_title':cat_title,'newpages':newpages,'page_one':page_one,'page_two':page_two})
 
 
 
