@@ -29,7 +29,8 @@
   <ul>
     <li><a href="{% url 'home' %}" class="active">Home </a> </li>
 {% for page in page_one %}
-    <li><a href="{% url 'mypage' page.slug    %}">{{page}}</a></li>
+    
+<li><a href="{% url 'mypage' page.slug    %}">{{page}}</a></li>
 
 {% endfor %}
       <!-- {% for cats in cat_title %}

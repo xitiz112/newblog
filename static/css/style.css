@@ -360,97 +360,45 @@ text-transform: uppercase;
     left: 47%;
     margin-top: 44px;
 }
-.service-one
-{
-display: flex;
-flex-basis: 250px;
-height: 200px;
-position: relative;
-}
-
-.service-one img
-{
-    width: 250px;
-}
 
 
-.overlay
-{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: red;
-    overflow: hidden;
-    width: 0;
-    height: 100%;
-    transition: .5s ease;
-}
-.service-one:hover .overlay {
-    width: 100%;
-  }
 
 
-.service-one,.service-two,.service-three
+
+
+#service-card
 {
     transition: 0.3s ease-in-out;
-}
-.service-one h3{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-40%, -50%);
-}
-.service-two h3{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-40%, -50%);
-}
-
-.service-three h3{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-40%, -50%);
-}
-.service-four h3
-{
-
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-40%, -50%);
-}
-.service-two{
-    display: flex;
-    flex-basis: 250px;
-  
-    height: 200px;
     position: relative;
-    }
-.service-two img
-    {
-width: 250px;
-    }
-
-.service-three img
-{
-    width: 250px;
 }
 
-.service-four{
-            display: flex;
-            flex-basis: 250px;
-          
-            height: 200px;
-            position: relative;
-            }
 
-.service-four img
-            {
-        width: 250px;
-            }
+
+
+
+
+#service-card img
+{
+    width: 100% !important;
+    height: 240px;
+    object-fit: cover;
+}
+#service-card h3
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-40%, -50%);
+}
+
+
+
+
+
+
+
+
+
 
 
 .contact-section
@@ -496,28 +444,16 @@ footer{
     text-transform: capitalize;
 }
 
-.service-three{
-        display: flex;
-        flex-basis: 200px;
-        height: 200px;
-        position: relative;
-        }
 
-.service-one:hover
+
+#service-card:hover
 {
     transform: scale(1.1);
   
 }
-.service-two:hover
-{
-    transform: scale(1.1);
+
   
-}
-.service-three:hover
-{
-    transform: scale(1.1);
-  
-}
+
 .item
 {
    
@@ -533,10 +469,12 @@ footer{
 
 .owl-carousel
 {
-    margin: 100px 0px;
+    margin: 10px 0px;
 }
 
-.contact-details h4
+
+
+.contact-details h4 
 {
     font-weight: 600;
     font-size: 20px;
