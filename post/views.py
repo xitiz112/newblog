@@ -6,6 +6,8 @@ from .forms import commentform
 from django.core.mail import send_mail
 from django.contrib import messages
 from mypage.models import Page
+from .forms import contactform
+
 
 def homepage(request):
     queryset = Post.objects.filter(status=1).order_by('-created')
@@ -13,24 +15,29 @@ def homepage(request):
     newpages=Page.objects.all()
     page_one=Page.objects.filter(title__contains='about')
     page_two=Page.objects.filter(title__contains='cloud')
-
+    form=contactform()
+   
 
     if request.method=='POST':
-         Name=request.POST['name']
-         Email=request.POST['email']
-         Message=request.POST['message']
+        form=contactform(request.POST)
 
-         send_mail(
+        if form.is_valid():
+            Name = form.cleaned_data["name"]
+            Message = form.cleaned_data["message"]
+            Email = form.cleaned_data["email"]
+
+            send_mail(
             Name,Message,Email,['kshitizbasnet86@gmail.com']
 
-        )
-         messages.success(request,'message sent succesfully',fail_silently=True)
-         return render(request,'post/index.html',{'queryset':queryset,'cat_title':cat_title})
-
-
+            )
+            form=contactform()
+            messages.success(request,'message sent succesfully',fail_silently=True)
+            return render(request,'post/index.html',{'queryset':queryset,'cat_title':cat_title,'form':form})
+       
+    else:
+        form=contactform()
     
-    return render(request,'post/index.html',
-    {'queryset':queryset,'cat_title':cat_title,'newpages':newpages,'page_one':page_one,'page_two':page_two})
+    return render(request,'post/index.html',{'queryset':queryset,'cat_title':cat_title,'newpages':newpages,'page_one':page_one,'page_two':page_two,'form':form})
 
 
 

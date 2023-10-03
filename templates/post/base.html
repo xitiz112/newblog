@@ -26,6 +26,10 @@
     
 
 <div class="navbar">
+
+  <div class="logo">
+    <img src="{% static  'img/axis_logo.png'   %}">
+  </div>
   <ul>
     <li><a href="{% url 'home' %}" class="active">Home </a> </li>
 {% for page in page_one %}
@@ -137,11 +141,50 @@
 </div>
 
 <footer class="py-3 bg-grey">
+<div class="footer-block container" >
+  <div class="block-1">
+    <h5>quick links</h5>
+    <li>
+      <a href="{% url 'home' %}" class="active">Home </a> 
+    </li>
+{% for page in page_one %}
+    
+<li>
+  <a href="{% url 'mypage' page.slug    %}">{{page}}</a>
+</li>
 
-    <div class="copyright">
-          <p class="m-0  text-center ">Copyright 2023 &copy; Axis infotech </p>
+{% endfor %}
+    
+    <li>
+      <a href="#our-clients">Testimonials</a>
+    </li>
+    <li>
+      <a href="#our-services">services</a>
+    </li>
+    <li>
+      <a href="#contact">contact</a>
+    </li>
+  </div>
+  <div class="block-2">
+    <div class="footer-logo">
+    <img src="{% static  'img/axis_logo.png'   %}">
     </div>
+  </div>
+  <div class="block-3">
+    <h5>contact</h5>
+    <p>Email: info@axisinfotech.com.np</p>
+    <p>Phone: 986-1500432/9849184007</p>
+    <p>Address: Buddhanagar,kathmandu,Nepal</p>
+  </div>
+
+</div>
+   
 </footer>
+<div class="copyright">
+  <p>Copyright 2023 &copy; Axis infotech </p>
+</div>
+
+
        
 
 </div>
@@ -166,6 +209,7 @@
 
 
 <script>
+  //typing text effect
        if ($(".text-slider").length == 1) {
              
              var typed_strings =
@@ -180,9 +224,9 @@
              });
          }
 
-
+//animation on scroll
          AOS.init();
-
+//owl-carousel image slider
   $(document).ready(function(){
     $('.owl-carousel').owlCarousel({
     loop:true,

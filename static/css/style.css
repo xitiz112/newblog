@@ -87,6 +87,7 @@ background-color: #f2f2f2;
 padding: 20px;
 display: flex;
 flex-basis: 50%;
+flex-direction: column;
 }
 
 #back-to-top
@@ -105,13 +106,26 @@ flex-basis: 50%;
 {
     background-color: #04AA6D;
 }
-
+.page-body
+{
+margin: 150px 10px 100px 10px;
+}
+.page-body p
+{
+    color: #000;
+    font-weight: 600;
+}
+.page-body h1
+{
+    text-transform: capitalize;
+    font-weight: 600;
+}
 .navbar
 {
 
     
     height: 70px;
-    position: sticky;
+    background-color: #00000063;
     top: 0;
     width: 100%;
     z-index: 9999;
@@ -119,6 +133,74 @@ flex-basis: 50%;
     position: fixed;
     justify-content: center;
 }
+
+.logo
+{
+    position: absolute;
+    left: 30px;
+    top: 0;
+}
+
+.logo img
+{
+    width: 140px;
+}
+
+footer h5,  li a,p
+{
+    color: #fff;
+}
+
+footer li 
+{
+    padding-top: 10px;
+}
+
+
+.footer-logo img
+{
+    width: 200px;
+}
+
+.footer-block
+{
+    display: flex;
+    flex-direction: row;
+    column-gap: 100px;
+    padding: 60px 0px 50px 40px;
+    flex-wrap: wrap;
+    row-gap: 30px;
+}
+
+.block-1 li
+{
+    list-style: none;
+}
+
+.block-1 h5,.block-3 h5
+{
+    text-transform: uppercase;
+}
+
+.block-1,.block-2,.block-3
+{
+    flex-basis: 300px;
+}
+
+
+
+.text-center
+{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.p-4
+{
+    padding: 100px 0px 0px 0px !important;
+}
+
 
 .navbar ul li a
 {
@@ -421,21 +503,19 @@ text-transform: uppercase;
 }
 footer{
     width: 100%;
-    height: 80vh;
     background: linear-gradient(to right, #136a8a, #267871);
-    position: relative;
+    
 }
 
 .copyright
 {
-    bottom: 0;
-    position: absolute;
-    left: 25%;
-    right: 25%;
+   background-color: #ccc;
 
 }
 .copyright p{
-    color: #fff;
+    color: #000;
+    text-align: center;
+    margin: 0;
 }
 
 .contact-header
@@ -546,6 +626,17 @@ footer{
         left: 20px;
     }
 
+    .logo
+    {
+        left: auto;
+    }
+    .logo img
+    {
+        width: 100px;
+    }
+    .footer-logo img {
+        width: 150px;
+    }
     .banner img{
         height: 80vh;
         object-fit: cover;

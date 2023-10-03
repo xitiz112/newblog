@@ -41,10 +41,15 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
     "post",
     "account",
-    "mypage"
-   
-    
+    "mypage",
+    "crispy_forms",
+    "crispy_bootstrap4", 
 ]
+
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -149,8 +154,11 @@ MEDIA_ROOT=BASE_DIR / 'media'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.mailgun.org'
-EMAIL_HOST_USER = 'postmaster@sandbox9bd2c8f2e4424dd8906eec83b4030134.mailgun.org'
-EMAIL_HOST_PASSWORD = '932629a510308490110fd1ba8b05d0b0-181449aa-8b13a30d'
+EMAIL_HOST_USER = 'postmaster@sandbox2955d1a6b10e4c2a9e03e8205c98a858.mailgun.org'
+EMAIL_HOST_PASSWORD = '81ef792965709655dd8b813e61f00f96-262b213e-bb8b1ec5'
 EMAIL_PORT = '587'
 EMAIL_USE_TLS = True
+
+
+
 

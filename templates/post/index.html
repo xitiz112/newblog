@@ -1,5 +1,6 @@
 {% extends "./base.html" %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block title %}Home{% endblock %}
 
@@ -35,7 +36,7 @@
     {% endfor %}
 </div>
 <div class="about-two" data-aos="fade-up"  data-aos-duration="1500" data-aos-delay="500" >
-    <img src="{% static 'img/images (2).jpg'   %}"  >
+    <img src="{% static 'img/technology.jpg'   %}"  >
 </div>
 
     </div>
@@ -69,13 +70,13 @@
         <div class="items">
         <div class="service-four" id="service-card" >
             <h3>graphics designing</h3>
-            <img src="{% static 'img/emily-bernal-v9vII5gV8Lw-unsplash.jpg'   %}"  >
+            <img src="{% static 'img/emily-bernal-v9vII5gV8Lw-unsplash.jpg'   %}" >
         </div>
         </div>
         <div class="items">
         <div class="service-five" id="service-card">
             <h3>digital marketing</h3>
-            <img src="{% static 'img/images (1).jpg'   %}"  >
+            <img src="{% static 'img/marketing.jpg'   %}"  >
         </div>
     </div>
     </div>
@@ -96,7 +97,7 @@
     <div class="owl-carousel owl-theme">
       
         <div class="item">
-            <img src="{% static 'img/user (3).png' %}" >
+            <img src="{% static 'img/icon.png' %}" >
 
                 <h3>Aakash Basnet</h3>
                 <p>I really liked their service as they are providing high 
@@ -104,21 +105,21 @@
                 </p>
         </div>
         <div class="item">
-            <img src="{% static 'img/user (3).png' %}" >
+            <img src="{% static 'img/icon.png' %}" >
             <h3>Binay Thapa</h3>
             <p>I really liked their service as they are providing high 
                 quality software products  at a reasonable rate
             </p>
         </div>
         <div class="item">
-            <img src="{% static 'img/user (3).png' %}" >
+            <img src="{% static 'img/icon.png' %}" >
             <h3>Rojin Shrestha</h3>
             <p>I really liked their service as they are providing high 
                 quality software products at a reasonable rate
             </p>
         </div>
         <div class="item">
-            <img src="{% static 'img/user (3).png' %}" >
+            <img src="{% static 'img/icon.png' %}" >
             <h3>Shristi adhikari</h3>
             <p>I really liked their service as they are providing high 
                 quality software products  at a reasonable rate
@@ -143,29 +144,22 @@
     <h2 class="contact-header">contact us</h2>
 <div class="contact-section">
     <div id="contactform">
-    <form method="POST" action="">
-  {% csrf_token   %}
-      <label for="name"> Name</label>
-      <input type="text" id="name" name="name" placeholder="Your name..">
-  
-      <label for="email">Email</label>
-      <input type="text" id="email" name="email" placeholder="Your email">
-  
-      
-  
-      <label for="message">Message</label>
-      <textarea id="message" name="message" placeholder="Write something.." ></textarea>
-  
-      <input type="submit" value="Submit">
+        <form action="{% url 'home' %}" method="post">
+            {% csrf_token %}
+            {{ form|crispy}} 
+            <input type="submit" value="Submit">
+        </form>
+
+        
       {% for message in messages %}
-      <div class="alert alert-{{ message.tags }} mb-0 alert-dismissible fade show" role="alert">
+      <div id="alert-message"  class="alert alert-{{ message.tags }} mb-0 alert-dismissible fade show" role="alert">
         <strong>Message: </strong> {{ message }}
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       {% endfor %}
-    </form>
+
     </div>
     <div class="contact-details">
         <h4><i class=" fa fa-phone-square"></i>Phone</h4>  986-1500432/9849184007
