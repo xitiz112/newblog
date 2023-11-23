@@ -39,7 +39,9 @@ def homepage(request):
     
     return render(request,'post/index.html',{'queryset':queryset,'cat_title':cat_title,'newpages':newpages,'page_one':page_one,'page_two':page_two,'form':form})
 
-
+def blog_list(request):
+    blogs=Post.objects.all()
+    return render(request,'post/blog_list.html',{'blogs':blogs})
 
 
 def categoryview(request,cat_name):

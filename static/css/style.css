@@ -32,6 +32,31 @@ html{
     box-shadow: 0 16px 48px #E3E7EB;
     padding-top: 10px;
 }
+.blog-section
+{
+    display: flex;
+}
+.blog_list
+{
+    display: flex;
+    flex-direction: row;
+    gap: 70px;
+    margin: 125px 50px 50px 50px;
+    flex-wrap: wrap;
+   
+
+}
+.blog_list img
+{
+    width: 200px;
+    height: 200px;
+}
+
+.blog_items
+{
+    width: 300px;
+    text-align: center;
+}
 
 .bg-light
 {
@@ -166,7 +191,7 @@ footer li
 {
     display: flex;
     flex-direction: row;
-    column-gap: 100px;
+    column-gap: 24px;
     padding: 60px 0px 50px 40px;
     flex-wrap: wrap;
     row-gap: 30px;
@@ -184,7 +209,7 @@ footer li
 
 .block-1,.block-2,.block-3
 {
-    flex-basis: 300px;
+    flex-basis: 350px;
 }
 
 
@@ -254,6 +279,10 @@ footer li
     text-transform: capitalize;
     color: #fff;
 }
+
+
+
+
 
 .banner-text p
 {
@@ -386,10 +415,29 @@ text-transform: uppercase;
     padding: 10px 25px;
     text-align: center;
     cursor: pointer;
-    transition: .3s;
+    transition: 0.3s;
     text-transform: uppercase;
-    font-size: 20px
+    font-size: 20px;
+    color: #9500ff;
+    position: relative;
+    
 }
+
+
+
+
+
+
+
+.about-one h3:hover
+{
+  background-color: rgb(92, 22, 184);
+   color: #fff;
+   border-color: #fff;
+    
+}
+
+
 
 
 
@@ -537,8 +585,9 @@ footer{
 .item
 {
    
-    height: 350px;
-    background-image: linear-gradient(#5985c3, #84a6d5);
+    height: auto;
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #afa188 100%);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -546,6 +595,24 @@ footer{
     row-gap: 16px;
     color: #fff;
 }
+q::before
+{
+    content: open-quote;
+    color:#fff;
+    font-size: 40px;
+    position: absolute;
+    top: -27px;
+    left: 14px;
+}
+q::after
+{
+    content: close-quote;
+    color: #fff;
+    font-size: 40px;
+    position: absolute;
+    bottom: -22px;
+}
+
 
 .owl-carousel
 {
@@ -576,8 +643,9 @@ footer{
 }
 .owl-carousel .owl-item p
 {
-    text-align: center;
+    
     padding: 0px 23px;
+    position: relative;
 }
 .owl-carousel .owl-item h3
 {
@@ -635,7 +703,7 @@ footer{
         width: 100px;
     }
     .footer-logo img {
-        width: 150px;
+        width: 14rem;
     }
     .banner img{
         height: 80vh;
@@ -691,5 +759,9 @@ footer{
       {
         flex-basis: 100%;
       }
+      .text-slider
+{
+    font-size: 30px;
+}
   
 }

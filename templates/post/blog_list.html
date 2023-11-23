@@ -1,0 +1,18 @@
+{% extends "./base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="blog-section">
+<div class="blog_list">
+{% for blogpost in blogs %}
+<div class="blog_items">
+   <img src="{{blogpost.image.url}}">
+<h2>{{blogpost.title}}</h2>
+<p style="color: #000;">{{blogpost.author}}</p>
+<p style="color: #000;">{{blogpost.created}}</p>
+</div>
+{% endfor %}
+</div>
+</div>
+
+{% endblock  %}

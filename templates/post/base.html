@@ -28,7 +28,7 @@
 <div class="navbar">
 
   <div class="logo">
-    <img src="{% static  'img/axis_logo.png'   %}">
+    <img src="{% static  'img/axis_infotech__1_-removebg-preview.png'   %}">
   </div>
   <ul>
     <li><a href="{% url 'home' %}" class="active">Home </a> </li>
@@ -47,6 +47,8 @@
      <li><a href="#our-clients">Testimonials</a></li>
     <li><a href="#our-services">services</a></li>
     <li><a href="#contact">contact</a></li>
+    <li><a href="{% url 'bloglist' %}">blog</a></li>
+
   
   
    <!-- <li class="dropdown">
@@ -114,6 +116,7 @@
     <a href="#">Services</a>
     <a href="#">Clients</a>
     <a href="#">Contact</a>
+    <a href="#">Blog</a>
   </div>
 
 </div>
@@ -167,14 +170,16 @@
   </div>
   <div class="block-2">
     <div class="footer-logo">
-    <img src="{% static  'img/axis_logo.png'   %}">
+    <img src="{% static  'img/axis_infotech__1_-removebg-preview.png'   %}">
     </div>
   </div>
   <div class="block-3">
     <h5>contact</h5>
-    <p>Email: info@axisinfotech.com.np</p>
-    <p>Phone: 986-1500432/9849184007</p>
-    <p>Address: Buddhanagar,kathmandu,Nepal</p>
+    <p><i class="fa fa-envelope" aria-hidden="true"></i>
+      Email: info@axisinfotech.com.np</p>
+    <p><i class="fa fa-phone-square" aria-hidden="true"></i> Phone: 986-1500432/9849184007</p>
+   
+    <p><i class="fa fa-map-marker" aria-hidden="true"></i> Address: Buddhanagar,kathmandu,Nepal</p>
   </div>
 
 </div>
@@ -232,6 +237,7 @@
     loop:true,
     margin:20,
     nav:true,
+    autoplayHoverPause:true,
     autoplay:true,
     responsive:{
         0:{

@@ -12,8 +12,9 @@ sitemaps = {
 
 urlpatterns = [
     path('', views.homepage, name='home'),
+    path('blog_listing', views.blog_list, name='bloglist'),
     path('post/<int:pk>', views.PostDetail, name='post_detail'),
-     path('category/<slug:cat_name>', views.categoryview, name='post_category'),
-     path("sitemap.xml", sitemap, {"sitemaps": sitemaps}, name="sitemap"),
+    path('category/<slug:cat_name>', views.categoryview, name='post_category'),
+    path("sitemap.xml", sitemap, {"sitemaps": sitemaps}, name="sitemap"),
 
 ]
